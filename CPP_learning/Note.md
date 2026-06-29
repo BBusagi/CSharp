@@ -1,4 +1,13 @@
 # 
+### CPP编译 vs CSharp编译
++ C++ AOT 直接编译到原生码
+  + Preprocess -> Compile -> Link
+  > main.cpp -> Preprocessor -> 展开后的源码 -> Lexer -> Token -> Parser -> AST  -> Assembler -> Compiler -> obj -> Linker -> exe/dll
+  + 特点 原生二进制 不需要运行时
++ C# 两段式编译
+  + IL -> CLR + JIT
+  + 特点 可移植IL，需要运行时，GC JIT等额外开销
+
 ### 95 How to REALLY learn C++
 + 学习cpp之后，去查看真实的opensource cpp项目
 + 除了教材之外，还需要真实环境和使用
@@ -35,8 +44,16 @@
   + 平台 x86 / x64
 + cpp --Compiler-> obj --Linker-> exe
 
-#6 Compiler
-#7 Linker（链接对 SDK 工作尤其重要）
+### 6 How the C++ Compiler Works
++ text -> Abstract Syntax Code
++ file has no meaning,(unlike java c#)
++ pre-processing
+  + #include #define #if endif #pragma once
+  + .i可以查看预处理后的文件
++ .obj为二进制不可读，但是可以转化为.asm可读文件
+
+
+#7 Linker（链接对SDK工作尤其重要）
 #16 Pointers
 #17 References（"指针 vs 引用"是经典追问）
 #42 Object Lifetime
