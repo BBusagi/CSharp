@@ -77,18 +77,20 @@ char* buffer = new char[8]; //heap中 申请8个char
 memset(buffer,0,8);         //清空原有的数据
 delete[] buffer;            //删除
 ```
-+ cpp中存在两种存储方式heap和stack
 + delete表示释放内存，但是heap不清空，stack会自动清空
 + `char**` - 二级指针
 
 ### 17 REFERENCES in C++
 + reference是pointer的上层语法糖syntax sugar
-+ reference必须初始化，并且无法修改
++ ref必须初始化，并且无法修改
+
+## 42 Object Lifetime in C++ (Stack/Scope Lifetimes)
++ cpp中存在两种lifetime,heap和stack
++ stack在结束后自动清空, heap不自动清空
++ 存在多种方法在scope外保留stack值
++ 也可以创建scope周期内的heap值
 
 
-
-
-#42 Object Lifetime
 #54 Stack vs Heap（经典追问）
 #38 new
 #25/#68 Destructor/Virtual Destructor
